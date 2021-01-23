@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="nl">
+  <head>
+    <meta charset="utf-8">
+    <title>
+	beveiliging(en) te omzeilen
+    </title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  </head>
+  <body>
+    <header>
+	<section>
+	    <h1 class="logo">
+		beveiliging(en) omzeilen
+	    </h1>
+	</section>
+	<nav>
+	    <div class="menu-bar">
+		<ul>
+		<li><a href="index.html"><i class="fa fa-home" aria-hidden="true"></i>home</a></li>
+		<li><h4><a href="#">info</a></h4>
+		    <div class="sub-menu-1">
+			<ul>
+			    <li><a href="pagina1.html">beschermings-<br>technieken</a></li>
+			    <li><a href="pagina2.html">controle</a></li>
+			    <li><a href="pagina4.html">gevolgen voor samenwerking</a></li>
+			</ul>
+		    </div>
+		</li>
+	    </ul>
+	    </div>
+	</nav>
+    </header>
+    <article class="text-1">
+	    <h3>
+		Internetblokkade providers eenvoudig te omzeilen
+	    </h3>
+	    <br>
+	    <h4>
+		Onlangs oordeelde de Haagse rechtbank dat internetproviders XS4ALL en Ziggo torrentsite The Pirate Bay voor hun abonnees ontoegankelijk moeten maken. Hoe zo'n blokkade er precies uit moet zien is nog onbekend, maar veel experts zijn het erover eens dat een blokkade eenvoudig is te omzeilen en het vraagstuk in kwestie niet oplost. Security.nl lezer "Medusa" stuurde het volgende artikel in, waarin hij ingaat op het blokkeren van websites, het omzeilen van dit soort blokkades en de techniek die hierbij komt kijken.
+	    </h4>
+	    <br>
+	    <p>
+		Om te begrijpen hoe het omzeilen van een internetblokkade door een ISP werkt is wat basale kennis over de structuur van het internet en de werking van netwerkprotocollen die gebruikt worden bij filesharing wel zo handig. Hieronder leg ik daarom de technische werking van het downloaden met behulp van een torrent van The Pirate Bay uit.
+	    <br>
+	    <img src="../img/omzeilen.jpg" class="afbeelding-2" alt="hoe je VPN beveiligingen omzeilt">
+	    <br>
+		Stel Henk heeft een computer met een internetaansluiting bij XS4ALL. Henk wil met behulp van een torrent het boek Mutual Aid van Peter Kropotkin downloaden. Henk vindt de volgende link, downloadt de torrent, verbindt met Jan en Piet die seeders (aanbieders) van de torrent zijn, ontvangt van hen de inhoud van de torrent, en ligt na een kwartiertje wachten op de bank naar zijn boek te luisteren. Wat is er nu zojuist gebeurd?
+	    <br><br>
+		Stel X is Henk's computer. X is verbonden met een centrale van XS4ALL, net zoals andere XS4ALL-gebruikers. XS4ALL is op zijn beurt weer verbonden met andere internetproviders (ISPs). Hoe de relaties tussen ISPs precies in elkaar steken weet ik ook niet exact, maar dat is voor deze tutorial van ondergeschikt belang (het werkt o.a. met Internet Exchange Points waar verschillende ISPs en andere IXPs elkaar treffen om data uit te wisselen). Henk's computer heeft van XS4ALL een uniek nummer gekregen waarmee anderen op het internet met hem kunnen communiceren, het IP-adres. Alle op het internet aangesloten apparaten hebben een uniek IP-adres, dus ook servers die een website hosten, zoals The Pirate Bay.
+	    <br><br>
+		Wanneer Henk dus naar thepiratebay.org gaat, maakt hij technisch gezien verbinding met een IP-adres. Dat zorgt ervoor dat de domeinnaam thepiratebay.org naar 194.71.107.15 verwijst. Het IP-adres van de The Pirate Bay ligt opgeslagen in het zogenaamde Domain Name System (DNS). Servers van dit systeem zijn over de hele wereld verspreid, en gewoonlijk bij elke ISP aanwezig, zodat de klanten van die ISP niet zelf de IP-adressen hoeven te onthouden.
+	    </p>
+	    <P>
+		Als Henk verbindt met The Pirate Bay gebeurt er dus het volgende: (Dat The Pirate Bay zich in een datacentrum bevindt negeren we even.)
+	    </p>
+	    <br>
+	    <ol>
+		<li>X stuurt een verzoek om het IP-adres van thepiratebay.org te ontvangen naar de DNS server van XS4ALL.</li>
+		<li>De DNS server stuurt het gevraagde IP adres (194.71.107.15), dat van thepiratebay.org, terug naar X.</li>
+		<li>X stuurt pakketjes met als bestemming 194.71.107.15 naar de XS4ALL centrale. (Een verzoek tot het ontvangen van de website in dit geval.)</li>
+		<li>De XS4ALL centrale stuurt deze pakketjes door naar het opgegeven IP-adres (194.71.107.15).</li>
+		<li>194.71.107.15 stuurt de opgevraagde pakketjes terug naar X via de XS4ALL centrale.</li>
+		<li>X zet de ontvangen pakketjes om in een webpagina.</li>
+		<li>Henk ziet de website van The Pirate Bay.</li>
+	    </ol>
+    </article>
+  </body>
+</html>
